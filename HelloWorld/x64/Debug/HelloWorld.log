@@ -1,4 +1,7 @@
-﻿  LineSegment.cpp
-c:\users\drago\documents\school\graphics\projects\helloworld\helloworld\linesegment.cpp(14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\drago\documents\school\graphics\projects\helloworld\helloworld\linesegment.cpp(21): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\HelloWorld\x64\Debug\HelloWorld.exe
+﻿  CircleVariation.cpp
+c:\users\drago\documents\school\graphics\projects\week4\program1\helloworld\circlevariation.cpp(50): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+c:\users\drago\documents\school\graphics\projects\week4\program1\helloworld\circlevariation.cpp(81): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week4\program1\helloworld\circlevariation.cpp(85): warning C4244: '=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week4\program1\helloworld\circlevariation.cpp(86): warning C4244: '=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week4\program1\helloworld\circlevariation.cpp(127): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\week4\Program1\x64\Debug\HelloWorld.exe

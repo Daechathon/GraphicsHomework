@@ -1,0 +1,4 @@
+﻿  LineSegment.cpp
+c:\users\drago\documents\school\graphics\projects\helloworld\helloworld\linesegment.cpp(14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\drago\documents\school\graphics\projects\helloworld\helloworld\linesegment.cpp(21): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\HelloWorld\x64\Debug\HelloWorld.exe

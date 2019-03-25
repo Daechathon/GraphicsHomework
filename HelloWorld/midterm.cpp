@@ -130,7 +130,11 @@ void displayFcn(void) {
 	GLfloat sx = 0.5, sy = 0.5;
 	GLdouble theta = pi / 2.0;
 
-	
+	GLfloat headTranslateX = 0.0, headTranslateY = 5.0;
+	GLfloat footTranslateX = 0.0, footTranslateY = 0.0;
+
+	GLfloat headScaleX = 0.5, headScaleY = 0.5;
+	GLfloat footScaleX = 1.0, footScaleY = 0.5;
 
 	while (1) {
 
@@ -139,52 +143,112 @@ void displayFcn(void) {
 			ty = 0.0;
 		}
 
-		wcPt2D verts[3] = {
+		wcPt2D vertsHead[3] = {
+
+			{175.0, 115.0}, {200.0, 85.0}, {225.0, 115.0}
+		};
+
+		wcPt2D vertsBody[3] = {
 
 			{200.0, 100.0}, {300.0, 100.0}, {250.0, 25.0}
 		};
 
+		wcPt2D vertsFoot[3] = {
+
+			{200.0, 0.0}, {300.0, 0.0}, {250.0, 25.0}
+		};
+
+
 		/* Define initial position for triangle. */
 		GLint nVerts = 3;
 
-		//in form of (y, x)
-		
-
 		/* Calculate position of triangle centroid. */
 		wcPt2D centroidPt;
-		GLint k, xSum = 0, ySum = 0;
+		wcPt2D headCenterPoint;
+		wcPt2D footCenterPoint;
 
-		for (k = 0; k < nVerts; k++) {
+		{
+			GLint k, xSum = 0, ySum = 0;
 
-			xSum += verts[k].x; ySum += verts[k].y;
+			for (k = 0; k < nVerts; k++) {
+
+				xSum += vertsBody[k].x; ySum += vertsBody[k].y;
+			}
+
+			centroidPt.x = GLfloat(xSum) / GLfloat(nVerts);
+			centroidPt.y = GLfloat(ySum) / GLfloat(nVerts);
 		}
 
-		centroidPt.x = GLfloat(xSum) / GLfloat(nVerts);
-		centroidPt.y = GLfloat(ySum) / GLfloat(nVerts);
+		//head----------------------------------------------------
+		{
+			GLint k, xSum = 0, ySum = 0;
+
+			for (k = 0; k < nVerts; k++) {
+
+				xSum += vertsHead[k].x; ySum += vertsHead[k].y;
+			}
+
+			headCenterPoint.x = GLfloat(xSum) / GLfloat(nVerts);
+			headCenterPoint.y = GLfloat(ySum) / GLfloat(nVerts);
+		}
+		//foot-----------------------------------------------
+		{
+			GLint k, xSum = 0, ySum = 0;
+
+			for (k = 0; k < nVerts; k++) {
+
+				xSum += vertsFoot[k].x; ySum += vertsFoot[k].y;
+			}
+
+			footCenterPoint.x = GLfloat(xSum) / GLfloat(nVerts);
+			footCenterPoint.y = GLfloat(ySum) / GLfloat(nVerts);
+		}
+
 
 		/* Set geometric transformation parameters. */
 		wcPt2D pivPt, fixedPt;
 		pivPt = centroidPt;
 		fixedPt = centroidPt;
 
-		
-
 		glClear(GL_COLOR_BUFFER_BIT); // Clear display window.
 
-		/* Initialize composite matrix to identity. */
+
+		//body----------------------------------
 		matrix3x3SetIdentity(matComposite);
+		//scale2D(sx, sy, fixedPt); 
+		//rotate2D (pivPt, theta); 
+		translate2D(tx, ty);
 
-		/* Construct composite matrix for transformation sequence. */
-		scale2D(sx, sy, fixedPt);	// First transformation: Scale. rotate2D (pivPt, theta); 
-		//rotate2D(pivPt, theta);		// Second transformation: Rotate translate2D (tx, ty); 
-		translate2D(tx, ty);		// Final transformation: Translate.
-
-
-		/* Apply composite matrix to triangle vertices. */
-		transformVerts2D(nVerts, verts);
+		transformVerts2D(nVerts, vertsBody);
 
 		glColor3f(1.0, 0.0, 0.0); // Set color for transformed triangle. triangle (verts); 
-		triangle(verts);		  // Display red transformed triangle.
+		triangle(vertsBody);		  // Display red transformed triangle.
+
+
+		//head-----------------------------------
+
+		matrix3x3SetIdentity(matComposite);
+		translate2D(headTranslateX, headTranslateY);
+		translate2D(tx, ty);
+		
+		//rotate2D (pivPt, theta); 
+		
+
+		transformVerts2D(nVerts, vertsHead);
+
+		glColor3f(0.0, 1.0, 0.0); // Set color for transformed triangle. triangle (verts); 
+		triangle(vertsHead);		  // Display red transformed triangle.
+
+
+		//foot-------------------------------------
+		matrix3x3SetIdentity(matComposite);
+		translate2D(footTranslateX, footTranslateY);
+		translate2D(tx, ty);
+		
+		transformVerts2D(nVerts, vertsFoot);
+
+		glColor3f(0.0, 0.0, 1.0); // Set color for transformed triangle. triangle (verts); 
+		triangle(vertsFoot);		  // Display red transformed triangle.
 
 
 		glFlush();

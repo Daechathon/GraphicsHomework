@@ -5,9 +5,11 @@ c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\hello
 c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(73): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(74): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(75): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(159): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
-c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(195): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(200): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(202): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(222): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(175): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(188): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(200): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(259): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(264): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(266): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(286): warning C4326: return type of 'main' should be 'int' instead of 'void'
   HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\midterm\GraphicsHomework\x64\Debug\HelloWorld.exe

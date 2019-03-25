@@ -120,12 +120,16 @@ void triangle(wcPt2D *verts) {
 
 void displayFcn(void) { 
 
-	double yOffset = 25.0;
-	double xOffset = 0;
+	double yOffset = 0.0;
+	double xOffset = 25.0;
 	bool doOffset = false;
 	int frameCount = 0;
 
 	while (1) {
+
+		if (xOffset * frameCount > 300) {
+			frameCount = 0;
+		}
 
 		/* Define initial position for triangle. */
 		GLint nVerts = 3;
@@ -133,7 +137,7 @@ void displayFcn(void) {
 		//in form of (y, x)
 		wcPt2D verts[3] = {
 
-			{50.0, 180.0}, {150.0, 180.0}, {100.0, 255.0}
+			{200.0, 25.0}, {300.0, 25.0}, {250.0, 100.0}
 		};
 
 		/* Calculate position of triangle centroid. */
@@ -153,7 +157,7 @@ void displayFcn(void) {
 		pivPt = centroidPt;
 		fixedPt = centroidPt;
 
-		GLfloat tx = 0.0, ty = 0.0 - yOffset * frameCount;
+		GLfloat tx = 0.0 - xOffset * frameCount, ty = 0.0;
 		GLfloat sx = 0.5, sy = 0.5;
 		GLdouble theta = pi / 2.0;
 

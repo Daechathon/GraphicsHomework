@@ -116,56 +116,70 @@ void triangle(wcPt2D *verts) {
 	glEnd();
 }
 
+
+
 void displayFcn(void) { 
 
-	/* Define initial position for triangle. */ 
-	GLint nVerts = 3; wcPt2D verts[3] = { 
+	double yOffset = 25.0;
+	double xOffset = 0;
+	bool doOffset = false;
+	int frameCount = 0;
 
-		{50.0, 25.0}, {150.0, 25.0}, {100.0, 100.0} 
-	};
+	while (1) {
 
-	/* Calculate position of triangle centroid. */ 
-	wcPt2D centroidPt;
-	GLint k, xSum = 0, ySum = 0; 
+		/* Define initial position for triangle. */
+		GLint nVerts = 3;
 
-	for (k = 0; k < nVerts; k++) { 
+		//in form of (y, x)
+		wcPt2D verts[3] = {
 
-		xSum += verts[k].x; ySum += verts[k].y; 
-	} 
+			{50.0, 180.0}, {150.0, 180.0}, {100.0, 255.0}
+		};
 
-	centroidPt.x = GLfloat(xSum) / GLfloat(nVerts); 
-	centroidPt.y = GLfloat(ySum) / GLfloat(nVerts);
+		/* Calculate position of triangle centroid. */
+		wcPt2D centroidPt;
+		GLint k, xSum = 0, ySum = 0;
 
-	/* Set geometric transformation parameters. */ 
-	wcPt2D pivPt, fixedPt; 
-	pivPt = centroidPt; 
-	fixedPt = centroidPt;
+		for (k = 0; k < nVerts; k++) {
 
-	GLfloat tx = 0.0, ty = 100.0; 
-	GLfloat sx = 0.5, sy = 0.5; 
-	GLdouble theta = pi / 2.0;
+			xSum += verts[k].x; ySum += verts[k].y;
+		}
 
-	glClear(GL_COLOR_BUFFER_BIT); // Clear display window.
+		centroidPt.x = GLfloat(xSum) / GLfloat(nVerts);
+		centroidPt.y = GLfloat(ySum) / GLfloat(nVerts);
 
-	glColor3f(0.0, 0.0, 1.0); // Set initial fill color to blue. triangle (verts); 
-	triangle(verts);		  // Display blue triangle.
+		/* Set geometric transformation parameters. */
+		wcPt2D pivPt, fixedPt;
+		pivPt = centroidPt;
+		fixedPt = centroidPt;
 
-	/* Initialize composite matrix to identity. */ 
-	matrix3x3SetIdentity(matComposite);
+		GLfloat tx = 0.0, ty = 0.0 - yOffset * frameCount;
+		GLfloat sx = 0.5, sy = 0.5;
+		GLdouble theta = pi / 2.0;
 
-	/* Construct composite matrix for transformation sequence. */ 
-	scale2D(sx, sy, fixedPt);	// First transformation: Scale. rotate2D (pivPt, theta); 
-	rotate2D(pivPt, theta);		// Second transformation: Rotate translate2D (tx, ty); 
-	translate2D(tx, ty);		// Final transformation: Translate.
+		glClear(GL_COLOR_BUFFER_BIT); // Clear display window.
+
+		/* Initialize composite matrix to identity. */
+		matrix3x3SetIdentity(matComposite);
+
+		/* Construct composite matrix for transformation sequence. */
+		scale2D(sx, sy, fixedPt);	// First transformation: Scale. rotate2D (pivPt, theta); 
+		//rotate2D(pivPt, theta);		// Second transformation: Rotate translate2D (tx, ty); 
+		translate2D(tx, ty);		// Final transformation: Translate.
 
 
-	/* Apply composite matrix to triangle vertices. */ 
-	transformVerts2D(nVerts, verts);
+		/* Apply composite matrix to triangle vertices. */
+		transformVerts2D(nVerts, verts);
 
-	glColor3f(1.0, 0.0, 0.0); // Set color for transformed triangle. triangle (verts); 
-	triangle(verts);		  // Display red transformed triangle.
+		glColor3f(1.0, 0.0, 0.0); // Set color for transformed triangle. triangle (verts); 
+		triangle(verts);		  // Display red transformed triangle.
 
-	glFlush();
+
+		glFlush();
+
+		frameCount++;
+		Sleep(300);
+	}
 }
 
 void winReshapeFcn(GLint newWidth, GLint newHeight) {
@@ -187,8 +201,27 @@ void main(int argc, char ** argv) {
 
 	init(); 
 
-	glutDisplayFunc(displayFcn); 
+	glutDisplayFunc(displayFcn);
 	glutReshapeFunc(winReshapeFcn);
 
 	glutMainLoop();
 }
+
+/* Initialize composite matrix to identity. */
+//matrix3x3SetIdentity(matComposite);
+
+/* Construct composite matrix for transformation sequence. */
+//scale2D(sx, sy, fixedPt);	// First transformation: Scale. rotate2D (pivPt, theta); 
+//rotate2D(pivPt, theta);		// Second transformation: Rotate translate2D (tx, ty); 
+//translate2D(tx, ty);		// Final transformation: Translate.
+
+
+/* Apply composite matrix to triangle vertices. */
+//transformVerts2D(nVerts, verts);
+
+//glColor3f(1.0, 0.0, 0.0); // Set color for transformed triangle. triangle (verts); 
+//triangle(verts);		  // Display red transformed triangle.
+
+
+//glColor3f(0.0, 0.0, 1.0); // Set initial fill color to blue. triangle (verts); 
+//triangle(verts);		  // Display blue triangle.

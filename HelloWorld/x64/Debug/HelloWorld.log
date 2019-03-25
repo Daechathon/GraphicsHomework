@@ -1,0 +1,11 @@
+﻿  week7.cpp
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(70): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(71): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(72): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(73): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(74): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(75): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(133): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(158): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\week8\ch7\graphicshomework\helloworld\week7.cpp(179): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\week8\ch7\GraphicsHomework\x64\Debug\HelloWorld.exe

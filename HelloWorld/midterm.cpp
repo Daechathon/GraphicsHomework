@@ -130,6 +130,8 @@ void displayFcn(void) {
 	GLfloat sx = 0.5, sy = 0.5;
 	GLdouble theta = pi / 2.0;
 
+	
+
 	while (1) {
 
 		if (tx < -250) {
@@ -137,14 +139,16 @@ void displayFcn(void) {
 			ty = 0.0;
 		}
 
+		wcPt2D verts[3] = {
+
+			{200.0, 100.0}, {300.0, 100.0}, {250.0, 25.0}
+		};
+
 		/* Define initial position for triangle. */
 		GLint nVerts = 3;
 
 		//in form of (y, x)
-		wcPt2D verts[3] = {
-
-			{200.0, 25.0}, {300.0, 25.0}, {250.0, 100.0}
-		};
+		
 
 		/* Calculate position of triangle centroid. */
 		wcPt2D centroidPt;

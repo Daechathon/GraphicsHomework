@@ -120,15 +120,21 @@ void triangle(wcPt2D *verts) {
 
 void displayFcn(void) { 
 
-	double yOffset = 0.0;
+	double yOffset = 15.0;
 	double xOffset = 25.0;
-	bool doOffset = false;
-	int frameCount = 0;
+	bool xMoveThisFrame = false;
+	bool yMoveThisFrame = true;
+	bool weakHop = true;
+
+	GLfloat tx = 0.0, ty = 0.0;
+	GLfloat sx = 0.5, sy = 0.5;
+	GLdouble theta = pi / 2.0;
 
 	while (1) {
 
-		if (xOffset * frameCount > 300) {
-			frameCount = 0;
+		if (tx < -250) {
+			tx = 0.0;
+			ty = 0.0;
 		}
 
 		/* Define initial position for triangle. */
@@ -157,9 +163,7 @@ void displayFcn(void) {
 		pivPt = centroidPt;
 		fixedPt = centroidPt;
 
-		GLfloat tx = 0.0 - xOffset * frameCount, ty = 0.0;
-		GLfloat sx = 0.5, sy = 0.5;
-		GLdouble theta = pi / 2.0;
+		
 
 		glClear(GL_COLOR_BUFFER_BIT); // Clear display window.
 
@@ -181,7 +185,24 @@ void displayFcn(void) {
 
 		glFlush();
 
-		frameCount++;
+		if (xMoveThisFrame) {
+
+			ty = 0.0;
+			tx -= xOffset;
+		}
+		else {
+
+			if (weakHop) 
+				ty = yOffset;
+			else
+				ty = yOffset * 2;
+
+			weakHop = !weakHop;
+		}
+
+		xMoveThisFrame = !xMoveThisFrame;
+
+
 		Sleep(300);
 	}
 }

@@ -1,1 +1,13 @@
-﻿  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\midterm\GraphicsHomework\x64\Debug\HelloWorld.exe
+﻿  midterm.cpp
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(70): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(71): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(72): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(73): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(74): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(75): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(155): warning C4244: '+=': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(191): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(196): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(198): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\drago\documents\school\graphics\projects\midterm\graphicshomework\helloworld\midterm.cpp(218): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  HelloWorld.vcxproj -> C:\Users\drago\Documents\School\Graphics\Projects\midterm\GraphicsHomework\x64\Debug\HelloWorld.exe
